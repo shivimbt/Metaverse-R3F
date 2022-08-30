@@ -35,7 +35,15 @@ export const Avatar = () => {
     movementController && movementController.update(delta, keysPressed, state.camera);
   });
 
-  return <primitive ref={modelRef} object={scene} rotation={[0,Math.PI,0]} />;
+  return (
+    <primitive
+      ref={modelRef}
+      object={scene}
+      rotation={[0, Math.PI, 0]}
+      scale={[3, 3, 3]}
+      position={[0, 0, 5]}
+    />
+  );
 };
 
 export default Avatar;

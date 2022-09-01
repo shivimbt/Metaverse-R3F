@@ -1,16 +1,13 @@
-import React, { Suspense, useState, useReducer } from "react";
+import React, { Suspense, useReducer } from "react";
 import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import * as THREE from "three";
-import Floor from "./components/Floor/Floor";
+/* import Floor from "./components/Floor/Floor"; */
 import Header from "./components/Header/Header";
 import Models from "./components/Models/Models";
-import Box from "./components/Box/Box";
 import { initialState, reducer } from "./utils/common";
-import { Environment, PerspectiveCamera } from "@react-three/drei";
-import Titles from "./components/Titles/Titles";
-import Text from "./components/Text/Text";
-import { Sky } from "@react-three/drei";
+import { Environment, Sky } from "@react-three/drei";
+import Tiles from "./components/Tiles/Tiles";
 import BannerContent from "./components/BannerContent/BannerContent";
 import avatarPath from "./assets/avatar.glb";
 import avatarFemalePath from "./assets/avatar_female.glb";
@@ -51,8 +48,6 @@ const App = () => {
           maleAvatar={avatarPath}
           femaleAvatar={avatarFemalePath}
         />
-        {/* links */}
-        {/* <Box {...{ state, dispatch }} /> */}
         {/* 3d models */}
         <Suspense fallback={null}>
           <Models {...{ state }} />
@@ -63,9 +58,55 @@ const App = () => {
               ground={{ height: 22, radius: 130 }}
             />
           )}
-
-          <Titles {...{ state, dispatch }} />
-          {/* <PerspectiveCamera makeDefault position={[-10, 60, 60]} fov={35} /> */}
+          {/* hotel's area  */}
+          <Tiles
+            {...{
+              state,
+              dispatch,
+              tilePosTiles: [0, 0, 0],
+              tilePosText: [0, 2.5, -2],
+              tilePosImg: [0.5, -0.7, 0],
+              tileTitle: "Room",
+              tileImgUrl: "/images/2.jpg",
+              tileModelPath: "/models/60s_room/bedroom.gltf",
+              tileRotationValues: [0, 0, 0],
+              tilePositionValues: [2, 2, -3.5],
+              tileScaleValues: [2, 2, 2],
+              tileEnvironmentImg: "",
+            }}
+          />
+          <Tiles
+            {...{
+              state,
+              dispatch,
+              tilePosTiles: [2, 0, 0],
+              tilePosText: [0, 2.5, -2],
+              tilePosImg: [0.5, -0.7, 0],
+              tileTitle: "Praty Hall",
+              tileImgUrl: "/images/3.jpg",
+              tileModelPath: "/models/premier_palace_kiev/partyhall.gltf",
+              tileRotationValues: [0, 75, 0],
+              tilePositionValues: [0, 0, 1],
+              tileScaleValues: [1, 1, 1],
+              tileEnvironmentImg: "",
+            }}
+          />
+          <Tiles
+            {...{
+              state,
+              dispatch,
+              tilePosTiles: [4, 0, 0],
+              tilePosText: [0, 2.5, -2],
+              tilePosImg: [0.5, -0.7, 0],
+              tileTitle: "Reception",
+              tileImgUrl: "/images/4.jpg",
+              tileModelPath: "/models/reception/reception.gltf",
+              tileRotationValues: [0, -90, 0],
+              tilePositionValues: [-10, 0, -5],
+              tileScaleValues: [4, 4, 4],
+              tileEnvironmentImg: "/lythwood_lounge_4k.hdr",
+            }}
+          />
         </Suspense>
       </Canvas>
     </div>

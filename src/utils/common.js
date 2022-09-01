@@ -7,6 +7,11 @@ export const initialState = {
   positionValues: [-10, 0, -5],
   scaleValues: [4, 4, 4],
   environmentImg: "/lythwood_lounge_4k.hdr",
+  /* modelPath: "/models/60s_room/bedroom.gltf",
+  rotationValues: [0, 0, 0],
+  positionValues: [2, 2, -3.5],
+  scaleValues: [2, 2, 2],
+  environmentImg: "", */
 };
 
 export const reducer = (state, { type, payload = {} }) => {

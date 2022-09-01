@@ -3,6 +3,7 @@ import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 export const Models = ({ state }) => {
+  console.log("state.modelPath", state.modelPath);
   const { scene } = useGLTF(process.env.PUBLIC_URL + state.modelPath);
   // const materials = useLoader(MTLLoader, "Poimandres.mtl");
   // const obj = useLoader(OBJLoader, "/models/Reception_table_new.obj");

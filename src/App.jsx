@@ -15,7 +15,6 @@ import AvatarInitialization from "./scenes/AvatarInitialization";
 import SwitchRooms from "./scenes/SwitchRooms";
 
 const App = () => {
-  
 
   return (
     <div id="canvas-container">

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Premier Palace Kiev
+* source:	https://sketchfab.com/3d-models/premier-palace-kiev-1c355c270de24c42a32916befa43e248
+* author:	oilao (https://sketchfab.com/oilao)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Premier Palace Kiev" (https://sketchfab.com/3d-models/premier-palace-kiev-1c355c270de24c42a32916befa43e248) by oilao (https://sketchfab.com/oilao) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

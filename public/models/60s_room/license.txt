@@ -1,0 +1,11 @@
+Model Information:
+* title:	60s Room
+* source:	https://sketchfab.com/3d-models/60s-room-a12fd5b5a4e542b6a999f789a874e400
+* author:	keith_jones (https://sketchfab.com/keith_jones)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "60s Room" (https://sketchfab.com/3d-models/60s-room-a12fd5b5a4e542b6a999f789a874e400) by keith_jones (https://sketchfab.com/keith_jones) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

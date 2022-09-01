@@ -1,17 +1,22 @@
-import React from "react";
+import React, { Suspense, useReducer } from "react";
 import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import * as THREE from "three";
-import Floor from "./components/Floor/Floor";
+/* import Floor from "./components/Floor/Floor"; */
 import Header from "./components/Header/Header";
-import { Sky } from "@react-three/drei";
+import Models from "./components/Models/Models";
+import { initialState, reducer } from "./utils/common";
+import { Environment, Sky } from "@react-three/drei";
+import Tiles from "./components/Tiles/Tiles";
 import BannerContent from "./components/BannerContent/BannerContent";
 import avatarPath from "./assets/avatar.glb";
 import avatarFemalePath from "./assets/avatar_female.glb";
 import AvatarInitialization from "./scenes/AvatarInitialization";
+import SwitchRooms from "./scenes/SwitchRooms";
 
 const App = () => {
   
+
   return (
     <div id="canvas-container">
       <Header />
@@ -38,9 +43,13 @@ const App = () => {
           castShadow={true}
         />
         {/* Floor component */}
-        <Floor />
+        {/* <Floor /> */}
         {/* avatar */}
-        <AvatarInitialization maleAvatar={avatarPath} femaleAvatar={avatarFemalePath} />
+        <AvatarInitialization
+          maleAvatar={avatarPath}
+          femaleAvatar={avatarFemalePath}
+        />
+        <SwitchRooms />
       </Canvas>
     </div>
   );

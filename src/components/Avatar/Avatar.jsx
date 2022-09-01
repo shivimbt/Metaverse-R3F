@@ -7,13 +7,12 @@ import useAnimationMap from "../../hooks/useAnimationMap";
 import MovementController from "../../utils/MovementController";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-export const Avatar = ({path, initialPosition }) => {
-
+export const Avatar = ({ path, initialPosition }) => {
   let movementController;
 
   const { scene, animations } = useGLTF(path);
   const { mixer, clips, actions } = useAnimations(animations, scene);
-  
+
   const animationMap = useAnimationMap(clips, actions);
   const keysPressed = useKeyPressed();
 
@@ -27,14 +26,28 @@ export const Avatar = ({path, initialPosition }) => {
     orbitControls.enablePan = false;
     orbitControls.enableDamping = true;
     orbitControls.maxPolarAngle = Math.PI / 2 - 0.05;
-    movementController = new MovementController(modelRef.current, orbitControls, animationMap, mixer, "Idle");
+    movementController = new MovementController(
+      modelRef.current,
+      orbitControls,
+      animationMap,
+      mixer,
+      "Idle"
+    );
   }, []);
 
   useFrame((state, delta, xrFrame) => {
-    movementController && movementController.update(delta, keysPressed, state.camera);
+    movementController &&
+      movementController.update(delta, keysPressed, state.camera);
   });
 
-  return <primitive ref={modelRef} object={scene} rotation={[0,Math.PI,0]} position={initialPosition} />;
+  return (
+    <primitive
+      ref={modelRef}
+      object={scene}
+      rotation={[0, Math.PI, 0]}
+      position={initialPosition}
+    />
+  );
 };
 
 export default Avatar;

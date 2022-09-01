@@ -3,50 +3,54 @@ import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import * as THREE from "three";
 import Floor from "./components/Floor/Floor";
-import CharacterController from "./components/CharacterController/CharacterController";
+import Header from "./components/Header/Header";
 import Models from "./components/Models/Models";
 import Box from "./components/Box/Box";
 import { initialState, reducer } from "./utils/common";
 import { Environment, PerspectiveCamera } from "@react-three/drei";
 import Titles from "./components/Titles/Titles";
 import Text from "./components/Text/Text";
+import { Sky } from "@react-three/drei";
+import BannerContent from "./components/BannerContent/BannerContent";
+import avatarPath from "./assets/avatar.glb";
+import avatarFemalePath from "./assets/avatar_female.glb";
+import AvatarInitialization from "./scenes/AvatarInitialization";
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div id="canvas-container">
+      <Header />
+      <BannerContent />
       <Canvas
         shadows={true}
         dpr={window.devicePixelRatio}
-        camera={{ fov: 65, near: 0.1, far: 1000, position: [0, 15, 15] }}
-        /* raycaster={{ enabled: false }}
-        dpr={[1, 2]}
-        camera={{ position: [0, 0, 10], far: 1000 }}
-        gl={{
-          powerPreference: "high-performance",
-          alpha: false,
-          antialias: false,
-          stencil: false,
-          depth: false,
-        }}
-        onCreated={({ gl }) => gl.setClearColor("#f5f5f5")} */
+        camera={{ fov: 65, near: 0.1, far: 1000, position: [0, 1.5, 5] }}
       >
         <primitive object={new THREE.AxesHelper(5)} />
         {/* sky component */}
-        {/* <color attach="background" args={["#80d6ff"]} /> */}
+        <Sky
+          distance={450000}
+          sunPosition={[5, 1, 8]}
+          inclination={0}
+          azimuth={47}
+        />
         {/* lighting components */}
         <ambientLight color="white" intensity={0.7} />
-        {/* <pointLight
+        <pointLight
           position={[-60, 100, -10]}
           intensity={1}
-          // color="white"
+          color="white"
           castShadow={true}
-        /> */}
+        />
         {/* Floor component */}
         {/* <Floor /> */}
         {/* avatar */}
-        <CharacterController />
+        <AvatarInitialization
+          maleAvatar={avatarPath}
+          femaleAvatar={avatarFemalePath}
+        />
         {/* links */}
         {/* <Box {...{ state, dispatch }} /> */}
         {/* 3d models */}

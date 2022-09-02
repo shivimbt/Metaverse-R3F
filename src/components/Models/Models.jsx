@@ -10,7 +10,7 @@ export const Models = ({ state }) => {
   // const obj = useLoader(FBXLoader, "/models/Reception_table.fbx");
 
   return (
-    <>
+    <group dispose={null}>
       <primitive
         object={scene}
         rotation={state.rotationValues}
@@ -20,7 +20,7 @@ export const Models = ({ state }) => {
         position={[0, 0.5, -10]}
         scale={[0.07, 0.07, 0.07]} */
       />
-    </>
+    </group>
   );
 };
 

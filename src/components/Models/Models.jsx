@@ -1,19 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { useLoader } from "@react-three/fiber";
-import { MTLLoader } from "three/examples/jsm/loaders/MTLLoader";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import bedroomPath from "../../assets/models/60s_room/bedroom.gltf";
-// import receptionPath from "/reception.gltf";
-// import city from "/models/city/scene.gltf";
-import { OBJLoader } from "three/examples/jsm/loaders/OBJLoader";
 
 export const Models = ({ state }) => {
   const { scene } = useGLTF(process.env.PUBLIC_URL + state.modelPath);
   // const materials = useLoader(MTLLoader, "Poimandres.mtl");
-  // const obj = useLoader(OBJLoader, "/models/reception-hospital.obj");
+  // const obj = useLoader(OBJLoader, "/models/Reception_table_new.obj");
+  // const obj = useLoader(FBXLoader, "/models/Reception_table.fbx");
+
   return (
     <>
       <primitive

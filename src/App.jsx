@@ -1,27 +1,40 @@
-import React, { Suspense, useState, useReducer } from "react";
+import React, { Suspense, useReducer } from "react";
 import { Canvas } from "@react-three/fiber";
 import "./App.css";
 import * as THREE from "three";
-import Floor from "./components/Floor/Floor";
-import CharacterController from "./components/CharacterController/CharacterController";
+/* import Floor from "./components/Floor/Floor"; */
+import Header from "./components/Header/Header";
 import Models from "./components/Models/Models";
 import Box from "./Box/Box";
-import { Booking } from "./components/Booking/Booking";
 import { initialState, reducer } from "./utils/common";
+import { Environment, Sky } from "@react-three/drei";
+import Tiles from "./components/Tiles/Tiles";
+import BannerContent from "./components/BannerContent/BannerContent";
+import avatarPath from "./assets/avatar.glb";
+import avatarFemalePath from "./assets/avatar_female.glb";
+import AvatarInitialization from "./scenes/AvatarInitialization";
+import SwitchRooms from "./scenes/SwitchRooms";
 
 const App = () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  
 
   return (
     <div id="canvas-container">
+      <Header />
+      <BannerContent />
       <Canvas
         shadows={true}
         dpr={window.devicePixelRatio}
-        camera={{ fov: 65, near: 0.1, far: 1000, position: [0, 15, 15] }}
+        camera={{ fov: 65, near: 0.1, far: 1000, position: [0, 1.5, 5] }}
       >
         <primitive object={new THREE.AxesHelper(5)} />
         {/* sky component */}
-        <color attach="background" args={["#80d6ff"]} />
+        <Sky
+          distance={450000}
+          sunPosition={[5, 1, 8]}
+          inclination={0}
+          azimuth={47}
+        />
         {/* lighting components */}
         <ambientLight color="white" intensity={0.7} />
         <pointLight
@@ -31,16 +44,13 @@ const App = () => {
           castShadow={true}
         />
         {/* Floor component */}
-        <Floor />
+        {/* <Floor /> */}
         {/* avatar */}
-        <CharacterController />
-        {/* links */}
-        <Box {...{ state, dispatch }} />
-        <Booking/>
-        {/* 3d models */}
-        <Suspense fallback={null}>
-          <Models {...{ state }} />
-        </Suspense>
+        <AvatarInitialization
+          maleAvatar={avatarPath}
+          femaleAvatar={avatarFemalePath}
+        />
+        <SwitchRooms />
       </Canvas>
     </div>
   );

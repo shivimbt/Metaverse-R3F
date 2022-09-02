@@ -25,7 +25,7 @@ class MovementController {
       }
     });
 
-    this.orbitControls.target.set(0, 1, 0);
+    this.orbitControls.target.set(0, 0, 0);
   }
 
   update(delta, keysPressed, camera) {

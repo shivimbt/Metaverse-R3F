@@ -13,7 +13,7 @@ const SwitchRooms = () => {
         <Environment
           files={state.environmentImg}
           position={[-8, 0, -2]}
-          ground={{ height: 22, radius: 130 }}
+          ground={{ height: 22, radius: 130, scale: 800 }}
         />
       )}
       {/* hotel's area  */}

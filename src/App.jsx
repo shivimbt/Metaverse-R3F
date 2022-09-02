@@ -6,6 +6,7 @@ import Floor from "./components/Floor/Floor";
 import CharacterController from "./components/CharacterController/CharacterController";
 import Models from "./components/Models/Models";
 import Box from "./Box/Box";
+import { Booking } from "./components/Booking/Booking";
 import { initialState, reducer } from "./utils/common";
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
         <CharacterController />
         {/* links */}
         <Box {...{ state, dispatch }} />
+        <Booking/>
         {/* 3d models */}
         <Suspense fallback={null}>
           <Models {...{ state }} />

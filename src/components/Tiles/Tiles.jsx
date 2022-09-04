@@ -36,7 +36,7 @@ export const Tiles = (props) => {
           border:
             props.tileId === props.state.selectedTile
               ? "5px solid #143e54cc"
-              : "0",
+              : "5px solid transparent",
           textAlign: "center",
           backgroundColor: "#ffffff",
         }}

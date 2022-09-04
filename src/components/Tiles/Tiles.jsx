@@ -34,7 +34,11 @@ export const Tiles = (props) => {
           pointerEvents:
             props.tileId !== props.state.selectedTile ? "auto" : "none",
           border:
-            props.tileId === props.state.selectedTile ? "5px solid blue" : "0",
+            props.tileId === props.state.selectedTile
+              ? "5px solid #143e54cc"
+              : "0",
+          textAlign: "center",
+          backgroundColor: "#ffffff",
         }}
       >
         <div

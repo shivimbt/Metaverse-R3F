@@ -28,7 +28,8 @@ const SwitchRooms = () => {
       <Models {...{ state }} />
       {state.environmentImg && (
         <Environment
-          files={state.environmentImg}
+          // files={state.environmentImg}
+          preset={state.environmentImg}
           position={[-8, 0, -2]}
           ground={{ height: 22, radius: 130, scale: 800 }}
         />

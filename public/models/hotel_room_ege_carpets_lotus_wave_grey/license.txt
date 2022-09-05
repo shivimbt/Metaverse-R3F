@@ -1,0 +1,11 @@
+Model Information:
+* title:	Hotel Room Ege Carpets Lotus Wave Grey
+* source:	https://sketchfab.com/3d-models/hotel-room-ege-carpets-lotus-wave-grey-3fca0b3423464c6cb0db86b395ed548a
+* author:	Aaron Openshaw (https://sketchfab.com/aaronopenshaw)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Hotel Room Ege Carpets Lotus Wave Grey" (https://sketchfab.com/3d-models/hotel-room-ege-carpets-lotus-wave-grey-3fca0b3423464c6cb0db86b395ed548a) by Aaron Openshaw (https://sketchfab.com/aaronopenshaw) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

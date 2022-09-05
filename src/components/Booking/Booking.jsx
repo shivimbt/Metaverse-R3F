@@ -1,27 +1,51 @@
 import React from "react";
-import { Html } from '@react-three/drei';
+import Modal from 'react-modal';
 
-export const Booking = () => {
+const customStyles = {
+  content: {
+    top: '0',
+    left: '50%',
+    right: '0',
+    bottom: 'auto',
+    height: '100%'
+  },
+  overlay:{
+    zIndex: '99999999'
+  }
+};
+const buttonStyles = {
+  position: "absolute",
+  top: "10px",
+  right: "10px"
+};
+
+Modal.setAppElement('#root');
+
+export const Booking = ({modalIsOpen, setIsOpen}) => {
+
+    function openModal() {
+      setIsOpen(true);
+    }
+
+    function closeModal() {
+      setIsOpen(false);
+    }
+
     return (
-    <group>
-        <Html transform position={[0, 0, 10]}>
-          <iframe width="200px" height="150px" src="booking.html" />
-        </Html>
-        {/* <Html transform position={[10, 0, 0]} rotation={[0, 90 * (Math.PI / 180), 0]}>
-          <iframe width="800px" height="500px" src="https://www.htmlgoodies.com/" />
-        </Html>
-        <Html transform position={[-10, 0, 0]} rotation={[0, 270 * (Math.PI / 180), 0]}>
-          <iframe width="800px" height="500px" src="https://www.htmlgoodies.com/" />
-        </Html>
-        <Html transform position={[0, 0, -10]} rotation={[0, 180 * (Math.PI / 180), 0]}>
-          <iframe width="800px" height="500px" src="https://www.htmlgoodies.com/" />
-        </Html>
-        <Html transform position={[0, -6, 0]} rotation={[90 * (Math.PI / 180), 0, 0]}>
-          <iframe width="800px" height="800px" src="https://www.htmlgoodies.com/" />
-        </Html>
-        <Html transform position={[0, 6, 0]} rotation={[90 * (Math.PI / 180), 0, 0]}>
-          <iframe width="800px" height="800px" src="https://www.htmlgoodies.com/" />
-        </Html> */}
-      </group>
+    <div>
+       <Modal
+        isOpen={false}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <button onClick={closeModal} style={buttonStyles}>
+          close
+        </button>
+          <iframe width="100%" height="100%" src="booking.html" />
+      </Modal>
+        
+        
+      </div>
     )
 }

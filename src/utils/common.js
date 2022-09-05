@@ -8,6 +8,7 @@ export const initialState = {
   scaleValues: [0.03, 0.03, 0.03],
   environmentImg: "lobby",
   selectedTile: "tile_1",
+  isBookingModalOpened: false
 };
 
 export const reducer = (state, { type, payload = {} }) => {
@@ -16,6 +17,11 @@ export const reducer = (state, { type, payload = {} }) => {
   }
   switch (type) {
     case "CHANGE_MODEL":
+      return {
+        ...state,
+        ...payload,
+      };
+    case "BOOKING_MODAL_OPENED":
       return {
         ...state,
         ...payload,

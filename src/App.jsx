@@ -7,12 +7,16 @@ import BannerContent from "./components/BannerContent/BannerContent";
 import avatarPath from "./assets/avatar.glb";
 import avatarFemalePath from "./assets/avatar_female.glb";
 import AvatarInitialization from "./scenes/AvatarInitialization";
+import { Booking } from "./components/Booking/Booking";
 
 const App = () => {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
   return (
     <div id="canvas-container">
       <Header />
       <BannerContent />
+      <Booking {...{ modalIsOpen, setIsOpen }}/>
       <Canvas
         shadows={true}
         dpr={window.devicePixelRatio}
@@ -39,6 +43,7 @@ const App = () => {
         <AvatarInitialization
           maleAvatar={avatarPath}
           femaleAvatar={avatarFemalePath}
+          {...{ setIsOpen }}
         />
       </Canvas>
     </div>

@@ -1,20 +1,19 @@
-import * as THREE from "three";
 import React, { useEffect, useRef } from "react";
-import { Image, Html } from "@react-three/drei";
-import Text from "../Text/Text";
+import { Html } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
 import "./Tiles.css";
 
 export const Tiles = (props) => {
   const { viewport, camera } = useThree();
   const groupRef = useRef(null);
+  console.log("tileId", props.tileId, "props.index", props.index);
   useEffect(() => {
     const groupRefCopy = groupRef.current;
     camera.add(groupRefCopy);
     return () => {
       camera.remove(groupRefCopy);
     };
-  }, [camera, groupRef.current]);
+  }, [camera]);
   console.log("props", props);
   return (
     <group
@@ -29,9 +28,17 @@ export const Tiles = (props) => {
       <Html
         style={{
           opacity: props.show ? 1 : 0,
-          width: 300,
+          width: 150,
           userSelect: "none",
-          pointerEvents: props.show ? "auto" : "none",
+          cursor: "pointer",
+          pointerEvents:
+            props.tileId !== props.state.selectedTile ? "auto" : "none",
+          border:
+            props.tileId === props.state.selectedTile
+              ? "5px solid #143e54cc"
+              : "5px solid transparent",
+          textAlign: "center",
+          backgroundColor: "#ffffff",
         }}
       >
         <div
@@ -44,12 +51,18 @@ export const Tiles = (props) => {
                 positionValues: props.scenePositionValues,
                 scaleValues: props.sceneScaleValues,
                 environmentImg: props.sceneEnvironmentImg,
+                selectedTile: props.tileId,
               },
             })
           }
         >
           <p className="tiles">{props.tileTitle}</p>
-          <img with={200} height={100} src={props.tileImgUrl} />
+          <img
+            width={150}
+            height={100}
+            src={props.tileImgUrl}
+            alt={props.tileTitle}
+          />
         </div>
       </Html>
     </group>

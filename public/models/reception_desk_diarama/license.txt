@@ -1,0 +1,11 @@
+Model Information:
+* title:	Reception Desk Diarama
+* source:	https://sketchfab.com/3d-models/reception-desk-diarama-88dc4ac541454e29919a99dd7405d920
+* author:	Greg Thorburn (https://sketchfab.com/gregthorburn)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Reception Desk Diarama" (https://sketchfab.com/3d-models/reception-desk-diarama-88dc4ac541454e29919a99dd7405d920) by Greg Thorburn (https://sketchfab.com/gregthorburn) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

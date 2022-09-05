@@ -1,8 +1,6 @@
 import React from "react";
 import { Canvas } from "@react-three/fiber";
 import "./App.css";
-import * as THREE from "three";
-/* import Floor from "./components/Floor/Floor"; */
 import Header from "./components/Header/Header";
 import { Sky } from "@react-three/drei";
 import BannerContent from "./components/BannerContent/BannerContent";
@@ -25,7 +23,8 @@ const App = () => {
         dpr={window.devicePixelRatio}
         camera={{ fov: 65, near: 0.1, far: 1000, position: [0, 1.5, 5] }}
       >
-        <primitive object={new THREE.AxesHelper(5)} />
+        {/* only uncomment this during development */}
+        {/* <primitive object={new THREE.AxesHelper(5)} /> */}
         {/* sky component */}
         <Sky
           distance={450000}
@@ -41,14 +40,11 @@ const App = () => {
           color="white"
           castShadow={true}
         />
-        {/* Floor component */}
-        {/* <Floor /> */}
         {/* avatar */}
         <AvatarInitialization
           maleAvatar={avatarPath}
           femaleAvatar={avatarFemalePath}
         />
-        <SwitchRooms />
       </Canvas>
     </div>
   );

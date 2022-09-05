@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import AsyncLoadAvatar from "../components/Avatar";
 import AsyncLoadSelectionOnlyModel from "../components/SelectionOnlyModel";
+import SwitchRooms from "./SwitchRooms";
 
 const AvatarInitialization = ({ maleAvatar, femaleAvatar }) => {
   const [selectedModel, setSelectedModel] = useState(null);
@@ -22,7 +23,12 @@ const AvatarInitialization = ({ maleAvatar, femaleAvatar }) => {
           />
         </>
       )}
-      {selectedModel && <AsyncLoadAvatar path={selectedModel} initialPosition={[0,0,0]} />}
+      {selectedModel && (
+        <>
+          <AsyncLoadAvatar path={selectedModel} initialPosition={[0, 0, 0]} />
+          <SwitchRooms />
+        </>
+      )}
     </>
   );
 };

@@ -7,7 +7,6 @@ import BannerContent from "./components/BannerContent/BannerContent";
 import avatarPath from "./assets/avatar.glb";
 import avatarFemalePath from "./assets/avatar_female.glb";
 import AvatarInitialization from "./scenes/AvatarInitialization";
-import SwitchRooms from "./scenes/SwitchRooms";
 import { Booking } from "./components/Booking/Booking";
 
 const App = () => {
@@ -17,7 +16,7 @@ const App = () => {
     <div id="canvas-container">
       <Header />
       <BannerContent />
-      <Booking {...{modalIsOpen, setIsOpen}}/>
+      <Booking {...{ modalIsOpen, setIsOpen }}/>
       <Canvas
         shadows={true}
         dpr={window.devicePixelRatio}
@@ -44,6 +43,7 @@ const App = () => {
         <AvatarInitialization
           maleAvatar={avatarPath}
           femaleAvatar={avatarFemalePath}
+          {...{ setIsOpen }}
         />
       </Canvas>
     </div>

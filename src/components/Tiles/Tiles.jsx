@@ -1,31 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { Html } from "@react-three/drei";
-import { useThree } from "@react-three/fiber";
 import "./Tiles.css";
 
 export const Tiles = (props) => {
-  const { viewport, camera } = useThree();
-  const groupRef = useRef(null);
-  console.log("tileId", props.tileId, "props.index", props.index);
-  useEffect(() => {
-    const groupRefCopy = groupRef.current;
-    camera.add(groupRefCopy);
-    return () => {
-      camera.remove(groupRefCopy);
-    };
-  }, [camera]);
-  console.log("props", props);
   return (
-    <group
-      ref={groupRef}
-      position={[
-        -viewport.width / 2.2,
-        viewport.height / 3.8 + props.tileHeight,
-        -5,
-      ]}
-      rotation={[0, 0, 0]}
-    >
-      <Html
+      <div
         style={{
           opacity: props.show ? 1 : 0,
           width: 150,
@@ -39,6 +18,7 @@ export const Tiles = (props) => {
               : "5px solid transparent",
           textAlign: "center",
           backgroundColor: "#ffffff",
+          marginTop: 30
         }}
       >
         <div
@@ -64,8 +44,7 @@ export const Tiles = (props) => {
             alt={props.tileTitle}
           />
         </div>
-      </Html>
-    </group>
+      </div>
   );
 };
 

@@ -6,6 +6,7 @@ import "./Tiles.css";
 export const Tiles = (props) => {
   const { viewport, camera } = useThree();
   const groupRef = useRef(null);
+  const isSelected = props.tileId === props.state.selectedTile;
   console.log("tileId", props.tileId, "props.index", props.index);
   useEffect(() => {
     const groupRefCopy = groupRef.current;
@@ -29,14 +30,10 @@ export const Tiles = (props) => {
         style={{
           opacity: props.show ? 1 : 0,
           width: 150,
-          userSelect: "none",
+          height: "auto",
           cursor: "pointer",
-          pointerEvents:
-            props.tileId !== props.state.selectedTile ? "auto" : "none",
-          border:
-            props.tileId === props.state.selectedTile
-              ? "5px solid #143e54cc"
-              : "5px solid transparent",
+          pointerEvents: isSelected ? "none" : "auto",
+          border: isSelected ? "5px solid #ff8000" : "5px solid transparent",
           textAlign: "center",
           backgroundColor: "#ffffff",
         }}
@@ -55,14 +52,15 @@ export const Tiles = (props) => {
               },
             })
           }
+          className={isSelected ? "tiles selectedTiles" : "tiles"}
         >
-          <p className="tiles">{props.tileTitle}</p>
           <img
             width={150}
-            height={100}
+            height={150}
             src={props.tileImgUrl}
             alt={props.tileTitle}
           />
+          <p>{props.tileTitle}</p>
         </div>
       </Html>
     </group>

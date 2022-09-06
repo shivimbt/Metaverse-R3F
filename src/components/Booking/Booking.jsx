@@ -1,6 +1,5 @@
 import React from "react";
-import Modal from 'react-modal';
-// import "./Booking.css";
+import Modal from "react-modal";
 
 const customStyles = {
   content: {

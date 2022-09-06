@@ -12,7 +12,7 @@
     overflow: hidden hidden;
 }
 
-.tiles p {
+.tiles button {
     margin-top: 1px;
     color: #ffffff;
     background: #353535;
@@ -24,8 +24,9 @@
     border-top: 0;
 }
 
-.tiles:hover p,
-.selectedTiles p {
+.tiles:hover button,
+.selectedTiles button {
+    cursor: pointer;
     color: #081624;
     background: #ffffff;
     border: 1px solid #ae9548;

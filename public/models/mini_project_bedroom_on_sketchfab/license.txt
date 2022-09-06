@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mini Project: Bedroom on Sketchfab
+* source:	https://sketchfab.com/3d-models/mini-project-bedroom-on-sketchfab-3f8d37058c894ae49e292809fe2e5c3a
+* author:	Ziyao Chen (https://sketchfab.com/charonchan)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mini Project: Bedroom on Sketchfab" (https://sketchfab.com/3d-models/mini-project-bedroom-on-sketchfab-3f8d37058c894ae49e292809fe2e5c3a) by Ziyao Chen (https://sketchfab.com/charonchan) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)

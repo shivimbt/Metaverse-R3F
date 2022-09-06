@@ -8,7 +8,9 @@ export const initialState = {
   scaleValues: [0.9, 0.9, 0.9],
   environmentImg: "lobby",
   selectedTile: "tile_1",
-  isBookingModalOpened: false
+  isBookingModalOpened: false,
+  avatarPosition: [0,0,3.5],
+  camPosition: [0, 1.5, 5]
 };
 
 export const reducer = (state, { type, payload = {} }) => {

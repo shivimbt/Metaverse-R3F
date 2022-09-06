@@ -49,6 +49,8 @@ export const Tiles = (props) => {
                     scaleValues: props.sceneScaleValues,
                     environmentImg: props.sceneEnvironmentImg,
                     selectedTile: props.tileId,
+                    avatarPosition: props.avatarPosition,
+                    camPosition: props.camPosition
                   },
                 })
           }

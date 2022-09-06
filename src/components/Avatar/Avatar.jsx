@@ -7,8 +7,9 @@ import useAnimationMap from "../../hooks/useAnimationMap";
 import MovementController from "../../utils/MovementController";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-export const Avatar = ({ path, initialPosition }) => {
+export const Avatar = ({ path, initialPosition, initialCamPosition }) => {
   let movementController;
+  const modelRef = useRef();
 
   const { scene, animations } = useGLTF(path);
   const { mixer, clips, actions } = useAnimations(animations, scene);
@@ -16,8 +17,16 @@ export const Avatar = ({ path, initialPosition }) => {
   const animationMap = useAnimationMap(clips, actions);
   const keysPressed = useKeyPressed();
 
-  const modelRef = useRef();
+  
   const { camera, gl } = useThree();
+
+  modelRef.current &&
+    modelRef.current.position.set(
+      initialPosition[0],
+      initialPosition[1],
+      initialPosition[2]
+    );
+  camera.position.set(initialCamPosition[0],initialCamPosition[1],initialCamPosition[2]);
 
   useEffect(() => {
     const orbitControls = new OrbitControls(camera, gl.domElement);
@@ -26,6 +35,11 @@ export const Avatar = ({ path, initialPosition }) => {
     orbitControls.enablePan = false;
     orbitControls.enableDamping = true;
     orbitControls.maxPolarAngle = Math.PI / 2 - 0.05;
+    orbitControls.target.set(
+      initialPosition[0],
+      initialPosition[1] + 1,
+      initialPosition[2]
+    );
     movementController = new MovementController(
       modelRef.current,
       orbitControls,
@@ -33,6 +47,7 @@ export const Avatar = ({ path, initialPosition }) => {
       mixer,
       "Idle"
     );
+    return () => orbitControls.dispose()
   }, []);
 
   useFrame((state, delta, xrFrame) => {

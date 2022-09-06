@@ -1,11 +1,12 @@
 import React, { Suspense, useReducer } from "react";
-import { Environment, Html } from "@react-three/drei";
+import { Environment } from "@react-three/drei";
 import Models from "../components/Models/Models";
 import Tiles from "../components/Tiles/Tiles";
 import { initialState, reducer } from "../utils/common";
 import { tilesMockData } from "../Json/tilesJson.js";
+import Avatar from "../components/Avatar/Avatar";
 
-const SwitchRooms = ({ setIsOpen }) => {
+const SwitchRooms = ({ setIsOpen, selectedModel }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const tilesComponent = tilesMockData.map((tilesObj, index) => {
@@ -22,9 +23,10 @@ const SwitchRooms = ({ setIsOpen }) => {
       />
     );
   });
-
+console.log(state.avatarPosition)
   return (
     <Suspense fallback={null}>
+      <Avatar path={selectedModel} initialPosition={state.avatarPosition} initialCamPosition={state.camPosition} key={state.selectedTile}/>
       <Models {...{ state }} />
       {state.environmentImg && (
         <Environment

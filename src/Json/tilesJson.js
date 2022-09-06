@@ -13,6 +13,8 @@ export const tilesMockData = [
     tileImgUrl: "/images/receptionIcon.jpg",
     tileHeight: 0,
     show: true,
+    avatarPosition: [0,0,3.5],
+    camPosition: [0,1.5,5]
   },
   {
     tileId: "tile_2",
@@ -28,6 +30,8 @@ export const tilesMockData = [
     tileImgUrl: "/images/roomIcon.jpg",
     tileHeight: -1.1,
     show: true,
+    avatarPosition: [0,0,-2],
+    camPosition: [0,1.5,-4]
   },
   {
     tileId: "tile_3",
@@ -43,6 +47,8 @@ export const tilesMockData = [
     tileImgUrl: "/images/roomIcon2.jpg",
     tileHeight: -2.2,
     show: true,
+    avatarPosition: [-2,0,2],
+    camPosition: [-2,1.5,3.5]
   },
   {
     tileId: "tile_4",
@@ -58,5 +64,7 @@ export const tilesMockData = [
     tileImgUrl: "/images/eventHallIcon.jpg",
     tileHeight: -3.3,
     show: true,
+    avatarPosition: [-2,0,7],
+    camPosition: [-2,1.5,9]
   },
 ];

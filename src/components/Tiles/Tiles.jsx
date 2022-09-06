@@ -54,8 +54,8 @@ export const Tiles = (props) => {
           className={isSelected ? "tiles selectedTiles" : "tiles"}
         >
           <img
-            width={140}
-            height={75}
+            width={125}
+            height={45}
             src={props.tileImgUrl}
             alt={props.tileTitle}
           />

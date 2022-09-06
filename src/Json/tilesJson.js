@@ -26,7 +26,7 @@ export const tilesMockData = [
     tilePosImg: [0.5, -0.7, 0],
     tileTitle: "Premium Room",
     tileImgUrl: "/images/roomIcon.jpg",
-    tileHeight: -1.2,
+    tileHeight: -1.1,
     show: true,
   },
   {
@@ -41,7 +41,7 @@ export const tilesMockData = [
     tilePosImg: [0.5, -0.7, 0],
     tileTitle: "Standard Room",
     tileImgUrl: "/images/roomIcon2.jpg",
-    tileHeight: -2.4,
+    tileHeight: -2.2,
     show: true,
   },
   {
@@ -56,7 +56,7 @@ export const tilesMockData = [
     tilePosImg: [0.5, -0.7, 0],
     tileTitle: "Event Hall",
     tileImgUrl: "/images/eventHallIcon.jpg",
-    tileHeight: -3.6,
+    tileHeight: -3.3,
     show: true,
   },
 ];

@@ -25,7 +25,7 @@ const AvatarInitialization = ({ maleAvatar, femaleAvatar, setIsOpen }) => {
       )}
       {selectedModel && (
         <>
-          <AsyncLoadAvatar path={selectedModel} initialPosition={[0, 0, 0]} />
+          <AsyncLoadAvatar path={selectedModel} initialPosition={[0, 0, 3.5]} />
           <SwitchRooms {...{ setIsOpen }}/>
         </>
       )}

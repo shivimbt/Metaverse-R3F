@@ -1,10 +1,10 @@
 export const tilesMockData = [
   {
     tileId: "tile_1",
-    sceneRotationValues: [0, -91, 0],
-    scenePositionValues: [0, 0, -7],
-    sceneScaleValues: [0.03, 0.03, 0.03],
-    sceneModelPath: "/models/reception_desk_diarama/reception_desk.gltf",
+    sceneRotationValues: [0, 0, 0],
+    scenePositionValues: [0, 0, -3],
+    sceneScaleValues: [0.9, 0.9, 0.9],
+    sceneModelPath: "/models/hotel_lobby.glb",
     sceneEnvironmentImg: "lobby",
     tilePos: [4, 0, 0],
     tilePosText: [0, 2.5, -2],

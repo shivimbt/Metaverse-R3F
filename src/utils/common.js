@@ -2,10 +2,10 @@ import * as THREE from "three";
 import { proxy } from "valtio";
 
 export const initialState = {
-  modelPath: "/models/reception_desk_diarama/reception_desk.gltf",
-  rotationValues: [0, -91, 0],
-  positionValues: [0, 0, -7],
-  scaleValues: [0.03, 0.03, 0.03],
+  modelPath: "/models/hotel_lobby.glb",
+  rotationValues: [0, 0, 0],
+  positionValues: [0, 0, -3],
+  scaleValues: [0.9, 0.9, 0.9],
   environmentImg: "lobby",
   selectedTile: "tile_1",
   isBookingModalOpened: false

@@ -1,18 +1,19 @@
 import React from "react";
 import Modal from 'react-modal';
+// import "./Booking.css";
 
 const customStyles = {
   content: {
-    top: '0',
-    left: '50%',
-    right: '0',
-    bottom: 'auto',
-    height: '100%'
+    top: "0",
+    left: "50%",
+    right: "0",
+    bottom: "auto",
+    height: "100%",
   },
-  overlay:{
-    zIndex: '99999999',
-    backgroundColor: 'transparent'
-  }
+  overlay: {
+    zIndex: "99999999",
+    backgroundColor: "rgba(51, 51, 51, 0.75)",
+  },
 };
 const buttonStyles = {
   position: "absolute",

@@ -31,7 +31,6 @@ export const Tiles = (props) => {
           width: 150,
           height: "auto",
           cursor: "pointer",
-          // pointerEvents: isSelected ? "none" : "auto",
           border: isSelected ? "5px solid #ff8000" : "5px solid transparent",
           textAlign: "center",
           backgroundColor: "#ffffff",
@@ -39,17 +38,19 @@ export const Tiles = (props) => {
       >
         <div
           onClick={(e) =>
-            props.dispatch({
-              type: "CHANGE_MODEL",
-              payload: {
-                modelPath: props.sceneModelPath,
-                rotationValues: props.sceneRotationValues,
-                positionValues: props.scenePositionValues,
-                scaleValues: props.sceneScaleValues,
-                environmentImg: props.sceneEnvironmentImg,
-                selectedTile: props.tileId,
-              },
-            })
+            isSelected
+              ? props.index !== 0 && props.setIsOpen(true)
+              : props.dispatch({
+                  type: "CHANGE_MODEL",
+                  payload: {
+                    modelPath: props.sceneModelPath,
+                    rotationValues: props.sceneRotationValues,
+                    positionValues: props.scenePositionValues,
+                    scaleValues: props.sceneScaleValues,
+                    environmentImg: props.sceneEnvironmentImg,
+                    selectedTile: props.tileId,
+                  },
+                })
           }
           className={isSelected ? "tiles selectedTiles" : "tiles"}
         >
@@ -59,15 +60,11 @@ export const Tiles = (props) => {
             src={props.tileImgUrl}
             alt={props.tileTitle}
           />
-          <p>{props.tileTitle}</p>
-          {isSelected && (
-            <button
-              style={{ width: "100%", opacity: props.show ? 1 : 0 }}
-              onClick={() => props.setIsOpen(true)}
-            >
-              Book
+          {
+            <button style={{ width: "100%" }}>
+              {isSelected && props.index !== 0 ? "Book" : props.tileTitle}
             </button>
-          )}
+          }
         </div>
       </Html>
     </group>

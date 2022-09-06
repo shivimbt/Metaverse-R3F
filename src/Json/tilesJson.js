@@ -12,7 +12,7 @@ export const tilesMockData = [
     tileTitle: "Reception",
     tileImgUrl: "/images/receptionIcon.jpg",
     tileHeight: 0,
-    show: true,
+    show: false,
   },
   {
     tileId: "tile_2",

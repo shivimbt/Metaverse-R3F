@@ -13,10 +13,10 @@ const App = () => {
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div id="canvas-container">
+    <div id="canvas-container" role="main">
       <Header />
       <BannerContent />
-      <Booking {...{ modalIsOpen, setIsOpen }}/>
+      <Booking {...{ modalIsOpen, setIsOpen }} />
       <Canvas
         shadows={true}
         dpr={window.devicePixelRatio}

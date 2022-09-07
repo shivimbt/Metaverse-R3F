@@ -55,10 +55,10 @@ export const Tiles = (props) => {
           className={isSelected ? "tiles selectedTiles" : "tiles"}
         >
           <img
-            width={125}
+            width={150}
             height={45}
             src={props.tileImgUrl}
-            alt={props.tileTitle}
+            alt={`${props.tileTitle} img`}
           />
           {
             <button style={{ width: "100%" }}>

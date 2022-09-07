@@ -8,7 +8,7 @@ const BannerContent = () => {
       <div className="banner-overlay">
         <div className="banner-container">
           <h1>Welcome!</h1>
-          <p className="subtitle">To The Grand Hotel Meta Experience</p>
+          <h2 className="subtitle">To The Grand Hotel Meta Experience</h2>
           <p className="content">
             Find out what the Grand Hotel has to offer right from the comfort of
             your home. Take a virtual tour with your avatar and book your stay

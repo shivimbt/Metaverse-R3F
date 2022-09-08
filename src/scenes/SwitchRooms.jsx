@@ -5,6 +5,7 @@ import Tiles from "../components/Tiles/Tiles";
 import { initialState, reducer } from "../utils/common";
 import { tilesMockData } from "../Json/tilesJson.js";
 import Avatar from "../components/Avatar/Avatar";
+import Loader from "../components/Loader/Loader";
 
 const SwitchRooms = ({ setIsOpen, selectedModel }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -25,7 +26,7 @@ const SwitchRooms = ({ setIsOpen, selectedModel }) => {
   });
 console.log(state.avatarPosition)
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<Loader />}>
       <Avatar path={selectedModel} initialPosition={state.avatarPosition} initialCamPosition={state.camPosition} key={state.selectedTile}/>
       <Models {...{ state }} />
       {state.environmentImg && (

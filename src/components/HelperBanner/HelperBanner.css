@@ -1,0 +1,17 @@
+.helper-container {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    z-index: 5;
+   
+}
+
+.helper-container p {
+    border: 2px solid black;
+    padding: 10px;
+    font-size: 20px;
+    margin: 10px;
+    background-color: rgba(20,62,84,0.8);
+    color: #b7b16b;
+    text-align: center;
+}

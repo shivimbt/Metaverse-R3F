@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import HelperBanner from "../HelperBanner/HelperBanner";
 import "./BannerContent.css";
 
 const BannerContent = () => {
   const [isBanner, setIsBanner] = useState(true);
   return (
-    isBanner && (
+    isBanner ? (
       <div className="banner-overlay">
         <div className="banner-container">
           <h1>Welcome!</h1>
@@ -19,7 +20,7 @@ const BannerContent = () => {
           </button>
         </div>
       </div>
-    )
+    ): <HelperBanner />
   );
 };
 
